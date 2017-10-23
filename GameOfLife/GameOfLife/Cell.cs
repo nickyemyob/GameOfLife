@@ -29,5 +29,15 @@ namespace GameOfLife
             
             return _x.Equals(item._x) && _y.Equals(item._y);
         }
+
+        public bool IsUnderPopulated(int liveNeighbours)
+        {
+            return liveNeighbours < 2;
+        }
+
+        public bool IsOverPopulated(int liveNeighbours)
+        {
+            return liveNeighbours > 3;
+        }
     }
 }

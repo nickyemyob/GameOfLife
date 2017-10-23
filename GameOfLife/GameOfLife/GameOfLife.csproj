@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cell.cs" />
+    <Compile Include="CellShould.cs" />
     <Compile Include="UniverseShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Universe.cs" />
