@@ -41,5 +41,15 @@ namespace GameOfLife
             var isOverPopulated = cell.IsOverPopulated(liveNeighbours);
             Assert.AreEqual(false, isOverPopulated);
         }
+
+        [Test]
+        public void ReturnCanReproduceAsTrue_WhenThereIsThreeNeighbours()
+        {
+            var cell = new Cell();
+            const int liveNeighbours = 3;
+            var canReproduce = cell.CanReproduce(liveNeighbours);
+            Assert.AreEqual(true, canReproduce);
+        }
+
     }
 }

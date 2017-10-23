@@ -39,5 +39,10 @@ namespace GameOfLife
         {
             return liveNeighbours > 3;
         }
+
+        public bool CanReproduce(int liveNeighbours)
+        {
+            return liveNeighbours == 3;
+        }
     }
 }
