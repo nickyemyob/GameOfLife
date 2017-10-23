@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using GameOfLife.Logic;
 using NUnit.Framework;
 
-namespace GameOfLife
+namespace GameOfLife.Tests
 {
     [TestFixture]
     public class UniverseShould

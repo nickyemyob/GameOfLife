@@ -1,7 +1,7 @@
-﻿using NUnit.Framework;
-using NUnit.Framework.Internal;
+﻿using GameOfLife.Logic;
+using NUnit.Framework;
 
-namespace GameOfLife
+namespace GameOfLife.Tests
 {
     [TestFixture]
     class CellShould
@@ -50,6 +50,8 @@ namespace GameOfLife
             var canReproduce = cell.CanReproduce(liveNeighbours);
             Assert.AreEqual(true, canReproduce);
         }
+
+    
 
     }
 }

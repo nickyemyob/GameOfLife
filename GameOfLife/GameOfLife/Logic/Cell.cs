@@ -1,6 +1,4 @@
-﻿using NUnit.Framework.Constraints;
-
-namespace GameOfLife
+﻿namespace GameOfLife.Logic
 {
     public class Cell
     {
@@ -13,10 +11,6 @@ namespace GameOfLife
             _x = 0;
             _y = 0;
         }
-
-
-        
-
 
         public override bool Equals(object obj)
         {

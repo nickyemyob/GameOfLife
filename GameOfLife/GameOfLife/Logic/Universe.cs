@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace GameOfLife
+namespace GameOfLife.Logic
 {
     internal class Universe
     {
