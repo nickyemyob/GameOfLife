@@ -1,5 +1,9 @@
-﻿using GameOfLife.Logic;
+﻿using System.Collections.Generic;
+using GameOfLife.Logic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
+using Assert = NUnit.Framework.Assert;
+using CollectionAssert = NUnit.Framework.CollectionAssert;
 
 namespace GameOfLife.Tests
 {
@@ -51,7 +55,72 @@ namespace GameOfLife.Tests
             Assert.AreEqual(true, canReproduce);
         }
 
-    
+        [Test]
+        public void ReturnTheNumberOfAliveNeighbours()
+        {
+            var cell = new Cell();
+            var aliveCell = new Cell()
+            {
+                State = true
+            };
+
+            var deadCell = new Cell()
+            {
+                State = false
+            };
+
+            var neighbours = new List<Cell>
+            {
+                aliveCell,
+                aliveCell,
+                aliveCell,
+                aliveCell,
+                deadCell,
+                deadCell,
+                deadCell,
+                deadCell
+            };
+
+            var numberOfAliveNeighbours = cell.GetAliveNeighbourCount(neighbours);
+            var expected = 4;
+            
+            Assert.AreEqual(expected, numberOfAliveNeighbours);
+        }
+
+        [Test]
+        public void ReturnAListOfTheCellsNeighbours()
+        {          
+            var universe = new Universe();
+
+            var world = universe.CreateEmptyWorld(4,4);
+
+            var neighbourFetcher = new NeighbourFetcher();
+            Cell cell = new Cell()
+            {
+                X = 1,
+                Y = 1
+
+            };
+            var neighbours = neighbourFetcher.GetAllNeighbours(world, cell);
+
+            var deadCell = new Cell()
+            {
+                State = false
+            };
+
+            var expected = new List<Cell>();
+            for (var i = 0; i < 8; i++)
+            {
+                expected.Add(deadCell);
+            }
+
+            CollectionAssert.AreEqual(expected, neighbours);
+
+        }
+
+
+
+
 
     }
 }

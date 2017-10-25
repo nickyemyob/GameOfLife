@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Logic\Cell.cs" />
     <Compile Include="Tests\CellShould.cs" />
+    <Compile Include="Tests\NeighbourFetcher.cs" />
     <Compile Include="Tests\UniverseShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Logic\Universe.cs" />

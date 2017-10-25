@@ -13,9 +13,9 @@ namespace GameOfLife.Tests
         {
             var universe = new Universe();
             var expectedWorld = new List<List<Cell>>();
-            for (var i = 0; i < 10; i++)
-                expectedWorld.Add(Enumerable.Repeat(new Cell(), 10).ToList());
-            var result = universe.CreateWorld();
+            for (var i = 0; i < 4; i++)
+                expectedWorld.Add(Enumerable.Repeat(new Cell(), 4).ToList());
+            var result = universe.CreateEmptyWorld(4,4);
             CollectionAssert.AreEqual(expectedWorld, result);
         }
     }

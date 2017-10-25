@@ -1,16 +1,13 @@
-﻿namespace GameOfLife.Logic
+﻿using System;
+using System.Collections.Generic;
+
+namespace GameOfLife.Logic
 {
     public class Cell
     {
-
-        private readonly int _x;
-        private readonly int _y;
-
-        public Cell()
-        {
-            _x = 0;
-            _y = 0;
-        }
+        public bool State { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
 
         public override bool Equals(object obj)
         {
@@ -21,7 +18,7 @@
                 return false;
             }
             
-            return _x.Equals(item._x) && _y.Equals(item._y);
+            return X.Equals(item.X) && Y.Equals(item.Y);
         }
 
         public bool IsUnderPopulated(int liveNeighbours)
@@ -37,6 +34,16 @@
         public bool CanReproduce(int liveNeighbours)
         {
             return liveNeighbours == 3;
+        }
+
+        public double GetAliveNeighbourCount(List<Cell> neighbours)
+        {
+            var count = 0;
+            foreach (var neighbour in neighbours)
+            {
+                if (neighbour.State) count++;
+            }
+            return count;
         }
     }
 }

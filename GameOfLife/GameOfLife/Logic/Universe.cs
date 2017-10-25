@@ -6,11 +6,15 @@ namespace GameOfLife.Logic
     internal class Universe
     {
 
-        public List<List<Cell>> CreateWorld()
+        private int height;
+        private int width;
+
+
+        public List<List<Cell>> CreateEmptyWorld(int width, int height)
         {
             var world = new List<List<Cell>>();
-            for (var i = 0; i < 10; i++)
-                world.Add(Enumerable.Repeat(new Cell(), 10).ToList());
+            for (var i = 0; i < 4; i++)
+                world.Add(Enumerable.Repeat(new Cell(), 4).ToList());
             return world;
         }
 
